@@ -9,7 +9,7 @@ export const translations: Translations = {
     learnMore: 'Learn More',
     aboutTitle: 'About The Astrologer',
     aboutName: 'P K Megavarnan',
-    aboutProfession: 'Vedic Astrologer',
+    aboutProfession: 'Vedic & Bhaskara & A L P Astrologer',
     aboutBio: 'With over 25 years of experience in Vedic astrology, P K Megavarnan has dedicated his life to illuminating the paths of others. His profound knowledge of celestial movements and their influence on human life provides deep insights and guidance, helping individuals navigate life\'s challenges and embrace their true potential.',
     servicesTitle: 'Our Services',
     services: [
@@ -46,7 +46,7 @@ export const translations: Translations = {
     learnMore: 'மேலும் அறிக',
     aboutTitle: 'ஜோதிடர் பற்றி',
     aboutName: 'பி கே மேகவர்ணன்',
-    aboutProfession: 'வேத ஜோதிடர்',
+    aboutProfession: 'வேத & பாஸ்கரா & ஏ எல் பி ஜோதிடர்',
     aboutBio: 'வேத ஜோதிடத்தில் 25 ஆண்டுகளுக்கும் மேலான அனுபவத்துடன், பி கே மேகவர்ணன் மற்றவர்களின் பாதைகளை ஒளிரச் செய்வதற்காக தனது வாழ்க்கையை அர்ப்பணித்துள்ளார். வானியல் இயக்கங்கள் மற்றும் மனித வாழ்வில் அவற்றின் செல்வாக்கு பற்றிய அவரது ஆழ்ந்த அறிவு, ஆழ்ந்த பார்வைகளையும் வழிகாட்டுதலையும் வழங்குகிறது.',
     servicesTitle: 'எங்கள் சேவைகள்',
     services: [
@@ -83,7 +83,7 @@ export const translations: Translations = {
     learnMore: 'మరింత తెలుసుకోండి',
     aboutTitle: 'జ్యోతిష్కుడు గురించి',
     aboutName: 'పి కె మేఘవర్ణన్',
-    aboutProfession: 'వేద జ్యోతిష్కుడు',
+    aboutProfession: 'వేద & భాస్కర & A L P జ్యోతిష్యుడు',
     aboutBio: 'వేద జ్యోతిషశాస్త్రంలో 25 సంవత్సరాల అనుభవంతో, పి కె మేఘవర్ణన్ ఇతరుల మార్గాలను ప్రకాశవంతం చేయడానికి తన జీవితాన్ని అంకితం చేశారు. ఖగోళ కదలికలు మరియు మానవ జీవితంపై వాటి ప్రభావం గురించి ఆయనకున్న అపారమైన జ్ఞానం, లోతైన అంతర్దృష్టులను మరియు మార్గదర్శకత్వాన్ని అందిస్తుంది.',
     servicesTitle: 'మా సేవలు',
     services: [
