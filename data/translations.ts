@@ -31,7 +31,7 @@ export const translations: Translations = {
     contactTitle: 'Get in Touch',
     contactForm: {
       name: 'Full Name',
-      dob: 'Date of Birth',
+      dob: 'Date of Birth & Time',
       pob: 'Place of Birth',
       message: 'Your Message',
       submit: 'Send Request',
@@ -69,7 +69,7 @@ export const translations: Translations = {
     contactForm: {
       name: 'முழு பெயர்',
       dob: 'பிறந்த தேதி',
-      pob: 'பிறந்த இடம்',
+      pob: 'பிறந்த இடம் மற்றும் நேரம்',
       message: 'உங்கள் செய்தி',
       submit: 'அனுப்பு',
     },
@@ -105,7 +105,7 @@ export const translations: Translations = {
     contactTitle: 'సంప్రదించండి',
     contactForm: {
       name: 'పూర్తి పేరు',
-      dob: 'పుట్టిన తేది',
+      dob: 'పుట్టిన తేది మరియు సమయం',
       pob: 'పుట్టిన ప్రదేశం',
       message: 'మీ సందేశం',
       submit: 'పంపు',
