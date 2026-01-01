@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../data/translations';
 
@@ -8,26 +8,28 @@ const Contact: React.FC = () => {
   const t = translations[language];
   const formRef = useRef<HTMLFormElement>(null);
 
-  const sendEmail = (e: React.FormEvent) => {
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!formRef.current) return;
 
-    emailjs.sendForm(
-      'service_v5h094p',
-      'template_zljibyw',
-      formRef.current,
-      'QWN6p-cyqQ0PbiGua'
-    ).then(
-      () => {
-        alert('Message sent successfully!');
-        formRef.current?.reset();
-      },
-      (error) => {
-        console.error(error);
-        alert('Failed to send message. Please try again.');
-      }
-    );
+    emailjs
+      .sendForm(
+        'service_v5h094p',
+        'template_zljibyw',
+        formRef.current,
+        'QWN6p-cyqQ0PbiGua'
+      )
+      .then(
+        () => {
+          alert('Message sent successfully!');
+          formRef.current?.reset();
+        },
+        (error) => {
+          console.error('EmailJS Error:', error);
+          alert('Failed to send message.');
+        }
+      );
   };
 
   return (
@@ -41,7 +43,7 @@ const Contact: React.FC = () => {
 
           {/* FORM */}
           <div className="lg:w-1/2 bg-gray-800/50 p-8 rounded-lg border border-yellow-400/20">
-            <form ref={formRef} onSubmit={sendEmail}>
+            <form ref={formRef} onSubmit={sendEmail} noValidate>
 
               <div className="mb-4">
                 <label className="block text-yellow-300 mb-2">
@@ -111,6 +113,7 @@ const Contact: React.FC = () => {
               >
                 {t.contactForm.submit}
               </button>
+
             </form>
           </div>
 
@@ -119,11 +122,10 @@ const Contact: React.FC = () => {
             <h3 className="text-2xl font-bold text-white mb-4 font-['Playfair_Display']">
               {t.contactDetails}
             </h3>
-
             <div className="space-y-4 text-lg text-gray-300">
               <p>📞 +91 93904 23009</p>
               <p>📧 megatelelinks@gmail.com</p>
-              <p>📍 #5/51 Nagaru Street, Narayanavanam – 517581, Tirupati Dist, A.P.</p>
+              <p>📍 #5/51 Nagaru Street, Narayanavanam – 517581</p>
             </div>
           </div>
 
