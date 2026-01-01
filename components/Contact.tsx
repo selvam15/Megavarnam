@@ -1,11 +1,37 @@
 
-import React from 'react';
+import React, { useRef } from 'react';
+import emailjs from 'emailjs-com';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../data/translations';
 
 const Contact: React.FC = () => {
   const { language } = useLanguage();
   const t = translations[language];
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const sendEmail = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!formRef.current) return;
+
+    emailjs
+      .sendForm(
+        'service_v5h094p',
+        'template_s5cosdr',
+        formRef.current,
+        'QWN6p-cyqQ0PbiGua'
+      )
+      .then(
+        () => {
+          alert('Message sent successfully!');
+          formRef.current?.reset();
+        },
+        (error) => {
+          console.error(error);
+          alert('Failed to send message. Please try again.');
+        }
+      );
+  };
 
   return (
     <section id="contact" className="py-20 bg-gray-900/50">
