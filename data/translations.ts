@@ -31,7 +31,7 @@ export const translations: Translations = {
     contactTitle: 'Get in Touch',
     contactForm: {
       name: 'Full Name',
-      dob: 'Date of Birth & Time',
+      dob: 'Date of Birth',
       tob: 'Time of Birth',
       pob: 'Place of Birth',
       message: 'Your Message',
