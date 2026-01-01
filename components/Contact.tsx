@@ -14,7 +14,7 @@ const Contact: React.FC = () => {
         <div className="flex flex-col lg:flex-row gap-12">
           
           <div className="lg:w-1/2 bg-gray-800/50 p-8 rounded-lg border border-yellow-400/20">
-            <form>
+            <form action="mailto:megatelelinks@gmail.com" method="POST" encType="text/plain">
               <div className="mb-4">
                 <label htmlFor="name" className="block text-yellow-300 mb-2">{t.contactForm.name}</label>
                 <input type="text" id="name" className="w-full bg-gray-700 text-white p-3 rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
