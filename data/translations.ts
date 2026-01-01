@@ -32,6 +32,7 @@ export const translations: Translations = {
     contactForm: {
       name: 'Full Name',
       dob: 'Date of Birth & Time',
+      tob: 'Time of Birth',
       pob: 'Place of Birth',
       message: 'Your Message',
       submit: 'Send Request',
