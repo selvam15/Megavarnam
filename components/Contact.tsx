@@ -25,15 +25,9 @@ const Contact: React.FC = () => {
                   <input type="date" id="dob" className="w-full bg-gray-700 text-white p-3 rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
                 </div>
                  <div>
-    <label htmlFor="tob" className="block text-yellow-300 mb-2">
-      {t.contactForm.tob}
-    </label>
-    <input
-      type="time"
-      id="tob"
-      className="w-full bg-gray-700 text-white p-3 rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-    />
-  </div>
+                  <label htmlFor="tob" className="block text-yellow-300 mb-2">{t.contactForm.tob}</label>
+                  <input type="time" id="tob"className="w-full bg-gray-700 text-white p-3 rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"/>
+                </div>
                 <div>
                   <label htmlFor="pob" className="block text-yellow-300 mb-2">{t.contactForm.pob}</label>
                   <input type="text" id="pob" className="w-full bg-gray-700 text-white p-3 rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
