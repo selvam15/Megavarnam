@@ -1,5 +1,4 @@
 import React, { useRef } from 'react';
-import emailjs from '@emailjs/browser';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../data/translations';
 
@@ -8,28 +7,43 @@ const Contact: React.FC = () => {
   const t = translations[language];
   const formRef = useRef<HTMLFormElement>(null);
 
-  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+  const sendToWhatsApp = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!formRef.current) return;
 
-    emailjs
-      .sendForm(
-        'service_29mq6ku',      // EmailJS Service ID
-        'template_zljibyw',     // EmailJS Template ID
-        formRef.current,
-        'QWN6p-cyqQ0PbiGua'     // EmailJS Public Key
-      )
-      .then(
-        () => {
-          alert('Message sent successfully!');
-          formRef.current?.reset();
-        },
-        (error) => {
-          console.error('EmailJS Error:', error);
-          alert('Failed to send message. Please try again.');
-        }
-      );
+    const formData = new FormData(formRef.current);
+
+    const name = formData.get('name');
+    const dob = formData.get('dob');
+    const tob = formData.get('tob');
+    const pob = formData.get('pob');
+    const message = formData.get('message');
+
+    const whatsappMessage = `
+Hello Mega Tele Links,
+
+New Contact Form Submission:
+
+Name: ${name}
+Date of Birth: ${dob}
+Time of Birth: ${tob}
+Place of Birth: ${pob}
+
+Message:
+${message}
+
+Please contact me.
+    `;
+
+    const whatsappNumber = '919390423009'; // country code + number (no +, no spaces)
+
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+      whatsappMessage
+    )}`;
+
+    window.open(whatsappURL, '_blank');
+    formRef.current.reset();
   };
 
   return (
@@ -44,7 +58,7 @@ const Contact: React.FC = () => {
 
           {/* CONTACT FORM */}
           <div className="lg:w-1/2 bg-gray-800/50 p-8 rounded-lg border border-yellow-400/20">
-            <form ref={formRef} onSubmit={sendEmail}>
+            <form ref={formRef} onSubmit={sendToWhatsApp}>
 
               {/* NAME */}
               <div className="mb-4">
@@ -116,9 +130,9 @@ const Contact: React.FC = () => {
               {/* SUBMIT */}
               <button
                 type="submit"
-                className="w-full px-8 py-3 bg-yellow-400 text-gray-900 font-bold rounded-full hover:bg-yellow-300 transition-transform transform hover:scale-105 shadow-lg"
+                className="w-full px-8 py-3 bg-green-500 text-gray-900 font-bold rounded-full hover:bg-green-400 transition-transform transform hover:scale-105 shadow-lg"
               >
-                {t.contactForm.submit}
+                Chat on WhatsApp
               </button>
 
             </form>
